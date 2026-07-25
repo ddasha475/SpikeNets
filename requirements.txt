@@ -1,0 +1,14 @@
+# Python 3.13.2
+# Install: pip install -r requirements.txt
+
+# Core deep learning
+torch>=2.3.0
+
+# Spiking neural network library
+snntorch==0.9.4
+
+# Scientific computing
+numpy>=1.26.0
+
+# Plotting
+matplotlib>=3.8.0
