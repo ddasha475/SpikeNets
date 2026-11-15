@@ -112,16 +112,7 @@ $$
   $$
 - **Преимущество**: схема является самокалибрующейся и не требует подбора абсолютного порога времени $\tau^*$. Разность задержек $\Delta \tau = \tau_0 - \tau_1$ меняет знак строго при $\lambda = \Lambda$.
 
-```mermaid
-flowchart LR
-    A["Стимул lambda ~ U(0,1)"] --> B["Gaussian Encoder (sigma)"]
-    B -->|"lambda_0"| C1["ExpNeuron 0 (C_0 = 0.34, w_0)"]
-    B -->|"lambda_1"| C2["ExpNeuron 1 (C_1 = 0.76, w_1)"]
-    C1 -->|"First Spike tau_0"| D{"TTFS Race: tau_1 < tau_0 ?"}
-    C2 -->|"First Spike tau_1"| D
-    D -->|Да| E["Класс 1 (lambda >= Lambda)"]
-    D -->|Нет| F["Класс 0 (lambda < Lambda)"]
-```
+![Блок-схема архитектуры соревновательного декодирования TTFS Race](experiments/plots/diagram_architecture.png)
 
 ---
 
